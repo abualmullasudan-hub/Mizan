@@ -26,6 +26,10 @@ jobs:
       - name: Get dependencies
         run: flutter pub get
 
+      # هذا السطر هو الحل: يقوم بإنشاء مجلد الأندرويد تلقائياً
+      - name: Generate Android files
+        run: flutter create . --platforms=android
+
       - name: Build APK
         run: flutter build apk --release
 
